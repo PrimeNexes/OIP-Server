@@ -7,6 +7,14 @@ var musicSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    musicId:{
+        type:String,
+        required:true
+    },
+    artist:{
+        type:String,
+        required:true
+    }
 });
 // Export User model
 var Form = module.exports = mongoose.model('Music', musicSchema);
