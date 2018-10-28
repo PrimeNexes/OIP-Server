@@ -19,10 +19,9 @@ app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
 mongoose.connect('mongodb://localhost/OIP',{ useNewUrlParser: true });
 
-var db = mongoose.connection;
+
 // Setup server port
 var port = process.env.PORT || 8080;
-
 // Allows cross-origin domains to access this API
 app.use((req, res, next) => {
     res.append('Access-Control-Allow-Origin' , 'http://localhost:'+port);
