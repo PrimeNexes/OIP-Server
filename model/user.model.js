@@ -24,6 +24,5 @@ var userSchema = new mongoose.Schema({
 var User = module.exports = mongoose.model('User', userSchema);
 
 module.exports.get = function (find, limit) {
-    console.log(find);
     return User.find(find).limit(limit);
 }

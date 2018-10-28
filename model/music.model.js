@@ -2,14 +2,14 @@
 // userModel.js
 var mongoose = require('mongoose');
 // Setup schema
-var formSchema = new mongoose.Schema({
+var musicSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
-    }
+    },
 });
 // Export User model
-var Form = module.exports = mongoose.model('Form', formSchema);
+var Form = module.exports = mongoose.model('Music', musicSchema);
 
 module.exports.get = function (callback) {
     return Form.find(callback);

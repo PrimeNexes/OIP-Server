@@ -12,6 +12,7 @@ router.get('/', function (req, res) {
 // Import contact controller
 var userController = require('../controller/user.controller');
 var formController = require('../controller/form.controller');
+var musicController = require('../controller/music.controller');
 // Contact routes
 
 router.route('/register')
@@ -23,6 +24,9 @@ router.route('/login')
 
 router.route('/getForms')
     .post(formController.getForm);
+
+router.route('/getMusic')
+    .post(musicController.getMusic);
 
 // router.route('/register/:contact_id')
 //     .get(contactController.view)

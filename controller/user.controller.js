@@ -5,7 +5,6 @@ const User = require('../model/user.model');
 // Handle index actions
 exports.login = function (req, res) {
     User.get({phoneNumber:req.body.phoneNumber,password:req.body.password},1).then(function(snapshot,err){
-        console.log(snapshot.length);
         if(err){          
             res.json(err);
         }

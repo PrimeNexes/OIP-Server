@@ -13,7 +13,7 @@ exports.getForm = function (req, res) {
         }
         res.json({
             status: "success",
-            message: "Contacts retrieved successfully",
+            message: "Forms retrieved successfully",
             data: user
         });
     });
