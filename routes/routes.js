@@ -10,11 +10,19 @@ router.get('/', function (req, res) {
     });
 });
 // Import contact controller
-var contactController = require('../controller/user.controller');
+var userController = require('../controller/user.controller');
+var formController = require('../controller/form.controller');
 // Contact routes
 
+router.route('/register')
+    .post(userController.register);
+
+
 router.route('/login')
-    .post(contactController.register);
+    .post(userController.login);
+
+router.route('/getForms')
+    .post(formController.getForm);
 
 // router.route('/register/:contact_id')
 //     .get(contactController.view)

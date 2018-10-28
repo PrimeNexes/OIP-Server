@@ -1,44 +1,21 @@
 // @ts-check
 // contactController.js
 // Import contact model
-const User = require('../model/user.model');
+const Form = require('../model/form.model');
 // Handle index actions
-exports.login = function (req, res) {
-    User.get({phoneNumber:req.body.phoneNumber,password:req.body.password},1).then(function(snapshot,err){
-        console.log(snapshot.length);
-        if(err){          
-            res.json(err);
-        }
-        else if(snapshot.length==0){
+exports.getForm = function (req, res) {
+    Form.get(function (err, user) {
+        if (err) {
             res.json({
-                errors: 'No user found',
+                status: "error",
+                message: err,
             });
         }
-        else{
-            res.json({
-                message:'Login Success',
-            })
-        }
-    });
-};
-// Handle create contact actions
-exports.register = function (req, res) {
-    var user = new User();
-    user.name = req.body.name ;
-    user.phoneNumber = req.body.phoneNumber;
-    user.password = req.body.password;
-// save the contact and check for errors
-    user.save(function (err) {
-        if (err)
-            {
-                res.json(err);
-            }
-        else{
         res.json({
-            message: 'New User created!',
+            status: "success",
+            message: "Contacts retrieved successfully",
             data: user
         });
-    }
     });
 };
 

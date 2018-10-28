@@ -2,7 +2,7 @@
 // userModel.js
 var mongoose = require('mongoose');
 // Setup schema
-var userSchema = new mongoose.Schema({
+var formSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -21,9 +21,8 @@ var userSchema = new mongoose.Schema({
     }
 });
 // Export User model
-var User = module.exports = mongoose.model('User', userSchema);
+var Form = module.exports = mongoose.model('Form', formSchema);
 
-module.exports.get = function (find, limit) {
-    console.log(find);
-    return User.find(find).limit(limit);
+module.exports.get = function (callback, limit) {
+    Form.find(callback);
 }
