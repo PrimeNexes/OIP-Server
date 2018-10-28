@@ -23,10 +23,10 @@ router.route('/login')
     .post(userController.login);
 
 router.route('/getForms')
-    .post(formController.getForm);
+    .get(formController.getForm);
 
 router.route('/getMusic')
-    .post(musicController.getMusic);
+    .get(musicController.getMusic);
 
 // router.route('/register/:contact_id')
 //     .get(contactController.view)
