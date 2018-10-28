@@ -4,7 +4,7 @@
 const Form = require('../model/form.model');
 // Handle index actions
 exports.getForm = function (req, res) {
-    Form.get(function (err, user) {
+    Form.get(function (err, forms) {
         if (err) {
             res.json({
                 status: "error",
@@ -14,7 +14,7 @@ exports.getForm = function (req, res) {
         res.json({
             status: "success",
             message: "Forms retrieved successfully",
-            data: user
+            data: forms
         });
     });
 };
